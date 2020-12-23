@@ -59,16 +59,12 @@ public class BeforeMainActivity extends AppCompatActivity {
         if (isNetworkAvailable()) {
 
         } else {
-            textView.setVisibility(View.VISIBLE);
-            imageView.setVisibility(View.VISIBLE);
-            progressBar.setVisibility(View.GONE);
-            infoTabIcon.setVisibility(View.GONE);
+            setNonEthernetCase();
         }
 
 
         if (SplashActivity.isEmpty!=null) {
             if (SplashActivity.isEmpty) {
-                progressBar.setIndeterminate(false);
                 nonCategoriesStart();
             } else {
                 progressBar.setIndeterminate(false);
@@ -103,5 +99,13 @@ public class BeforeMainActivity extends AppCompatActivity {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
+
+    //setting image and text in non-ethernet case
+    private void setNonEthernetCase(){
+        textView.setVisibility(View.VISIBLE);
+        imageView.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.GONE);
+        infoTabIcon.setVisibility(View.GONE);
+    }
 
 }

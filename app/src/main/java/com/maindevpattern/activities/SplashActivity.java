@@ -180,7 +180,7 @@ public class SplashActivity extends Activity {
                          break;
                  }
 
-               getBeforeMain();
+               getCloak();
              }
 
              @Override

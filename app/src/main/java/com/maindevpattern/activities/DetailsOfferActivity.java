@@ -38,6 +38,8 @@ import retrofit2.Response;
 
 public class DetailsOfferActivity extends AppCompatActivity {
 
+
+
     //progressbar declaring
     ProgressBar progressBar;
 
@@ -68,6 +70,46 @@ public class DetailsOfferActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details_offer);
 
+        //declaring items
+        declareItems();
+
+
+
+        //getting intent
+        Intent intent = getIntent();
+        //getting extra number from cloak adapter
+        position = intent.getIntExtra("position", 0);
+        //starting method
+        parseDataToObjects();
+       // getJsonData();
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DetailsOfferActivity.this, CloakActivity.class));
+            }
+        });
+
+        textTerms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailsOfferActivity.this, InfoDetailsActivity.class);
+                intent.putExtra("check", 1);
+                startActivity(intent);
+            }
+        });
+
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(DetailsOfferActivity.this, CloakActivity.class));
+    }
+
+
+    //declaring items
+    private void declareItems(){
         //initializing toolbar
         toolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
@@ -93,104 +135,51 @@ public class DetailsOfferActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar4);
         progressBarImage = findViewById(R.id.progressbarImage);
         progressBarName = findViewById(R.id.progressbarName);
+    }
 
+    // parse data to fields
+    @SuppressLint("SetTextI18n")
+    private void parseDataToObjects(){
+        //parsing data to views
+        scrollView.setVisibility(View.VISIBLE);
+        progressBar.setIndeterminate(false);
+        progressBar.setVisibility(View.GONE);
+        String URL = SplashActivity.listDataAll.get(position).getImg();
+        textName.setText(SplashActivity.listDataAll.get(position).getOfferName().toUpperCase());
+        progressBarName.setIndeterminate(false);
+        progressBarName.setVisibility(View.GONE);
+        textAdress.setText("• " + SplashActivity.listDataAll.get(position).getOfferName());
+        textNumber.setText("• " + SplashActivity.listDataAll.get(position).getDetail().getPhone());
+        textMail.setText("• " + SplashActivity.listDataAll.get(position).getDetail().getEmail());
+        textSite.setText("• " + SplashActivity.listDataAll.get(position).getDetail().getSite());
+        textPercent.setText("• " + SplashActivity.listDataAll.get(position).getDetail().getApr() + "%");
+        textLicense.setText("• " + SplashActivity.listDataAll.get(position).getDetail().getLicense());
+        textFistCredit.setText("• " + SplashActivity.listDataAll.get(position).getAmount().getFrom() + "₴");
+        textNextCredit.setText("• " + SplashActivity.listDataAll.get(position).getAmount().getTo() + "₴");
+        textYUR.setText("• " + SplashActivity.listDataAll.get(position).getDetail().getAddress());
 
-        //getting intent
-        Intent intent = getIntent();
-        //getting extra number from cloak adapter
-        position = intent.getIntExtra("position", 0);
-        //starting method
-        getJsonData();
+        //parsing image to imageview
+        Glide.with(DetailsOfferActivity.this)
+                .load(URL)
+                .listener(new RequestListener<Drawable>() {
+                    @Override
+                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+                        progressBarImage.setIndeterminate(false);
+                        progressBarImage.setVisibility(View.GONE);
+                        return false;
+                    }
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DetailsOfferActivity.this, CloakActivity.class));
-            }
-        });
-
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                scrollView.setVisibility(View.VISIBLE);
-                progressBar.setIndeterminate(false);
-                progressBar.setVisibility(View.GONE);
-            }
-        }, 1500);
-
-        textTerms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(DetailsOfferActivity.this, InfoDetailsActivity.class);
-                intent.putExtra("check", 1);
-                startActivity(intent);
-            }
-        });
-
+                    @Override
+                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+                        progressBarImage.setIndeterminate(false);
+                        progressBarImage.setVisibility(View.GONE);
+                        return false;
+                    }
+                })
+                .centerInside()
+                .into(imageView);
     }
 
 
-    //getting jsonData from server
-    public void getJsonData() {
-        Interface apiInterfaceCount = Initializator.getClient().create(Interface.class);
-        Call<Data> call = apiInterfaceCount.getData(SplashActivity.APP_ID);
-        call.enqueue(new Callback<Data>() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onResponse(@NonNull Call<Data> call, @NonNull Response<Data> response) {
 
-                //if response successful
-                if (response.isSuccessful()) {
-
-                    //parsing data to views
-                    String URL = response.body().getList().get(position).getImg();
-                    textName.setText(response.body().getList().get(position).getOfferName().toUpperCase());
-                    progressBarName.setIndeterminate(false);
-                    progressBarName.setVisibility(View.GONE);
-                    textAdress.setText("• " + response.body().getList().get(position).getOfferName());
-                    textNumber.setText("• " + response.body().getList().get(position).getDetail().getPhone());
-                    textMail.setText("• " + response.body().getList().get(position).getDetail().getEmail());
-                    textSite.setText("• " + response.body().getList().get(position).getDetail().getSite());
-                    textPercent.setText("• " + response.body().getList().get(position).getDetail().getApr() + "%");
-                    textLicense.setText("• " + response.body().getList().get(position).getDetail().getLicense());
-                    textFistCredit.setText("• " + response.body().getList().get(position).getAmount().getFrom() + "₴");
-                    textNextCredit.setText("• " + response.body().getList().get(position).getAmount().getTo() + "₴");
-                    textYUR.setText("• " + response.body().getList().get(position).getDetail().getAddress());
-
-                    //parsing image to imageview
-                    Glide.with(DetailsOfferActivity.this)
-                            .load(URL)
-                            .listener(new RequestListener<Drawable>() {
-                                @Override
-                                public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                                    progressBarImage.setIndeterminate(false);
-                                    progressBarImage.setVisibility(View.GONE);
-                                    return false;
-                                }
-
-                                @Override
-                                public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                                    progressBarImage.setIndeterminate(false);
-                                    progressBarImage.setVisibility(View.GONE);
-                                    return false;
-                                }
-                            })
-                            .centerInside()
-                            .into(imageView);
-                }
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<Data> call, @NonNull Throwable t) {
-
-            }
-        });
-
-    }
-
-    @Override
-    public void onBackPressed() {
-        startActivity(new Intent(DetailsOfferActivity.this, CloakActivity.class));
-    }
 }
