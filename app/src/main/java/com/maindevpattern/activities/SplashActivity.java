@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.telephony.TelephonyManager;
 
 import androidx.annotation.NonNull;
@@ -67,10 +66,8 @@ public class SplashActivity extends Activity {
 
         if (carrier.equals("ua")) {
             getJsonData();
-            getBeforeMain();
         } else {
             getJsonDataCloak();
-            getBeforeMain();
         }
 
     }
@@ -78,17 +75,7 @@ public class SplashActivity extends Activity {
 
     //starting CloakActivity
     public void getCloak() {
-
-        //init handler
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(new Intent(SplashActivity.this, CloakActivity.class));
-                finish();
-            }
-        }, 1500);
-
+        startActivity(new Intent(SplashActivity.this, CloakActivity.class));
     }
 
     //get carrier name
@@ -98,15 +85,7 @@ public class SplashActivity extends Activity {
     }
 
     public void getBeforeMain() {
-        //init handler
-        Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(new Intent(SplashActivity.this, BeforeMainActivity.class));
-                finish();
-            }
-        }, 1500);
+        startActivity(new Intent(SplashActivity.this, BeforeMainActivity.class));
     }
 
     public void getID() {
@@ -158,8 +137,7 @@ public class SplashActivity extends Activity {
                         third = response.body().getCategories().get(2).getLabel();
                         break;
                 }
-
-              //  getBeforeMain();
+                getBeforeMain();
             }
 
             @Override
@@ -201,7 +179,7 @@ public class SplashActivity extends Activity {
                          break;
                  }
 
-               //  getCloak();
+               getBeforeMain();
              }
 
              @Override

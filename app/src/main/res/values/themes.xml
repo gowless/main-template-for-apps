@@ -61,7 +61,7 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="colorPrimary">#0456E8</item>
         <item name="colorPrimaryDark">#04A60A</item>
-        <item name="colorAccent">#149E3E</item>
+        <item name="colorAccent">#FAFAFA</item>
         <item name="android:windowBackground">@color/ic_launcher_background</item>
         <item name="android:drawable">@mipmap/icon</item>
         <item name="android:navigationBarColor" tools:targetApi="lollipop">
