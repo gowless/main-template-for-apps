@@ -5,14 +5,13 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,17 +23,12 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.maindevpattern.MainClass;
+
 import com.maindevpattern.R;
-import com.maindevpattern.models.get.Data;
-import com.maindevpattern.network.Initializator;
-import com.maindevpattern.network.Interface;
+
 
 import java.util.Objects;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class DetailsOfferActivity extends AppCompatActivity {
 
@@ -73,15 +67,14 @@ public class DetailsOfferActivity extends AppCompatActivity {
         //declaring items
         declareItems();
 
-
-
         //getting intent
         Intent intent = getIntent();
+
         //getting extra number from cloak adapter
         position = intent.getIntExtra("position", 0);
+
         //starting method
         parseDataToObjects();
-       // getJsonData();
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

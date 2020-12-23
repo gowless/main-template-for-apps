@@ -10,10 +10,14 @@ import android.telephony.TelephonyManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.gms.ads.identifier.AdvertisingIdClient;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.maindevpattern.R;
+import com.maindevpattern.adapters.uitabbed.SectionsPagerAdapter;
 import com.maindevpattern.models.get.Data;
 import com.maindevpattern.models.get.Liste;
 import com.maindevpattern.network.Initializator;
@@ -26,8 +30,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class SplashActivity extends Activity {
-    public static String tt, tn, net, cam, adg, cre;
+public class SplashActivity extends AppCompatActivity {
+
+    public static String  net, cam, adg, cre;
 
     public static List<Liste> listDataAll;
     public static List<Liste> listDataBad;
@@ -64,6 +69,7 @@ public class SplashActivity extends Activity {
         //getting carrier ISO name
         getCarrier();
 
+        //checking carrier to match current country code SIM
         if (carrier.equals("ua")) {
             getJsonData();
         } else {
@@ -84,10 +90,12 @@ public class SplashActivity extends Activity {
         carrier = manager.getSimCountryIso();
     }
 
+    //starting BeforeMain activity
     public void getBeforeMain() {
         startActivity(new Intent(SplashActivity.this, BeforeMainActivity.class));
     }
 
+    //getting advertising ID
     public void getID() {
         AsyncTask.execute(new Runnable() {
             @Override
@@ -105,7 +113,7 @@ public class SplashActivity extends Activity {
         });
     }
 
-    //setting to get json file and parse it to models
+    //setting to get json file and parse it to models in main case
     public void getJsonData() {
         Interface apiInterfaceCount = Initializator.getClient().create(Interface.class);
         Call<Data> call = apiInterfaceCount.getData(APP_ID);
@@ -114,13 +122,12 @@ public class SplashActivity extends Activity {
             public void onResponse(@NonNull Call<Data> call, @NonNull Response<Data> response) {
                 assert response.body() != null;
                 listDataAll = response.body().getList();
-
                 isEmpty = response.body().getCategories().isEmpty();
                 numberOfTabs = response.body().getCategories().size();
                 listDataBad = response.body().getList();
                 listDataZero = response.body().getList();
 
-
+                //switching between numbers of tabs (maximum - 3)
                 switch (numberOfTabs) {
                     case 0:
                         break;
@@ -137,6 +144,7 @@ public class SplashActivity extends Activity {
                         third = response.body().getCategories().get(2).getLabel();
                         break;
                 }
+                //open MainActivity
                 getBeforeMain();
             }
 
@@ -149,7 +157,14 @@ public class SplashActivity extends Activity {
 
     }
 
-     private void getJsonDataCloak(){
+
+
+
+
+
+
+    //setting to get json file and parse it to models in case of cloak
+     public void getJsonDataCloak(){
          Interface apiInterfaceCount = Initializator.getClient().create(Interface.class);
          Call<Data> call = apiInterfaceCount.getData(APP_ID);
          call.enqueue(new Callback<Data>() {
@@ -162,7 +177,7 @@ public class SplashActivity extends Activity {
                  listDataBad = response.body().getList();
                  listDataZero = response.body().getList();
 
-
+                 //switching between numbers of tabs (maximum - 3)
                  switch (numberOfTabs) {
                      case 0:
                          break;
@@ -179,8 +194,8 @@ public class SplashActivity extends Activity {
                          third = response.body().getCategories().get(2).getLabel();
                          break;
                  }
-
-               getCloak();
+                 //open cloak
+               getBeforeMain();
              }
 
              @Override
@@ -191,6 +206,7 @@ public class SplashActivity extends Activity {
          });
 
      }
+
 
 
 }

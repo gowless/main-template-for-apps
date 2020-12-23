@@ -16,8 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.maindevpattern.R;
 
-
-
 public class BeforeMainActivity extends AppCompatActivity {
 
     //info tab icon declaring
@@ -88,10 +86,12 @@ public class BeforeMainActivity extends AppCompatActivity {
         }, 500);
     }
 
+    //starting mainactivity
     private void mainStart() {
         startActivity(new Intent(BeforeMainActivity.this, MainActivity.class));
     }
 
+    //checking network availability
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);

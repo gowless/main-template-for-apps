@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.maindevpattern.MainClass;
 import com.maindevpattern.activities.SplashActivity;
@@ -21,7 +22,7 @@ import com.maindevpattern.fragments.FragmentZeroList;
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
  */
-public class SectionsPagerAdapter extends FragmentPagerAdapter {
+public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
 
     private static final String[] TAB_TITLES = new String[]{SplashActivity.first, SplashActivity.second, SplashActivity.third};
     private final Context mContext;

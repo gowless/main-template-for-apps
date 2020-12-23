@@ -42,7 +42,6 @@ public class InfoDetailsActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-
         startActivity(new Intent(InfoDetailsActivity.this, CloakActivity.class));
     }
 }

@@ -22,8 +22,13 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.maindevpattern.R;
 import com.maindevpattern.adapters.uitabbed.SectionsPagerAdapter;
+import com.maindevpattern.models.get.Data;
+import com.maindevpattern.network.Initializator;
+import com.maindevpattern.network.Interface;
 
-
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -44,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
     //text non-ithernet
     TextView textView;
+
+    //SplashActivity object
+    SplashActivity splashActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,9 +119,7 @@ public class MainActivity extends AppCompatActivity {
     //setting Network Callbacks
     private void setNetworkCallBacks(){
         ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-
             NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.getActiveNetwork());
             if (capabilities == null){
                 Toast.makeText(MainActivity.this, "No Connection", Toast.LENGTH_LONG).show();
@@ -122,6 +128,8 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onAvailable(@NonNull Network network) {
                     Toast.makeText(MainActivity.this, "Connection Available", Toast.LENGTH_LONG).show();
+
+
                 }
                 @Override
                 public void onLost(@NonNull Network network) {
@@ -151,4 +159,8 @@ public class MainActivity extends AppCompatActivity {
         progressBar.setVisibility(View.GONE);
         infoTabIcon.setVisibility(View.GONE);
     }
+
+
+
+
 }

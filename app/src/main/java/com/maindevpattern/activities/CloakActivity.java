@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.util.SparseLongArray;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -16,7 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.maindevpattern.MainClass;
 import com.maindevpattern.R;
 import com.maindevpattern.adapters.AdapterCloak;
 
@@ -92,7 +90,6 @@ public class CloakActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         recyclerView.setHasFixedSize(true);
-
         recyclerView.setDrawingCacheEnabled(true);
         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
         AdapterCloak recyclerAdapterCloakList = new AdapterCloak(getApplicationContext(), SplashActivity.listDataAll);
