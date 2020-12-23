@@ -3,12 +3,18 @@ package com.maindevpattern.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
@@ -43,36 +49,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //declaring vars
+        setDeclaring();
+
         //section pager initialization to display tabs
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(sectionsPagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs_layout);
-        tabs.setupWithViewPager(viewPager);
+        setupViewPager();
 
-
-        //textview and image of non-inherent case
-        textView = findViewById(R.id.text_non_Ithernet);
-        imageView = findViewById(R.id.non_Ithernet);
-
-        //recyclerview
-        recyclerView = findViewById(R.id.recyclerView);
-
-        //progress bar
-        progressBar = findViewById(R.id.progressBar);
-
-
-        //info tab icon init
-        infoTabIcon = findViewById(R.id.info_tab_icon);
+        //network callback for getting data
+        setNetworkCallBacks();
 
         //check for network connection
         if (isNetworkAvailable()) {
 
         } else {
-            textView.setVisibility(View.VISIBLE);
-            imageView.setVisibility(View.VISIBLE);
-            progressBar.setVisibility(View.GONE);
-            infoTabIcon.setVisibility(View.GONE);
+            setNonEthernetCase();
         }
 
 
@@ -100,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(a);
     }
 
+    //network availability check
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -107,5 +99,56 @@ public class MainActivity extends AppCompatActivity {
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 
+    //setting ViewPager
+    private void setupViewPager(){
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = findViewById(R.id.tabs_layout);
+        tabs.setupWithViewPager(viewPager);
+    }
 
+    //setting Network Callbacks
+    private void setNetworkCallBacks(){
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+
+            NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.getActiveNetwork());
+            if (capabilities == null){
+                Toast.makeText(MainActivity.this, "No Connection", Toast.LENGTH_LONG).show();
+            }
+            connectivityManager.registerDefaultNetworkCallback(new ConnectivityManager.NetworkCallback(){
+                @Override
+                public void onAvailable(@NonNull Network network) {
+                    Toast.makeText(MainActivity.this, "Connection Available", Toast.LENGTH_LONG).show();
+                }
+                @Override
+                public void onLost(@NonNull Network network) {
+                    Toast.makeText(MainActivity.this, "Connection Lost", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+    }
+
+    // declaring main objects
+    private void setDeclaring(){
+        //textview and image of non-inherent case
+        textView = findViewById(R.id.text_non_Ithernet);
+        imageView = findViewById(R.id.non_Ithernet);
+        //recyclerview
+        recyclerView = findViewById(R.id.recyclerView);
+        //progress bar
+        progressBar = findViewById(R.id.progressBar);
+        //info tab icon init
+        infoTabIcon = findViewById(R.id.info_tab_icon);
+    }
+
+    //setting image and text in non-ethernet case
+    private void setNonEthernetCase(){
+        textView.setVisibility(View.VISIBLE);
+        imageView.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.GONE);
+        infoTabIcon.setVisibility(View.GONE);
+    }
 }

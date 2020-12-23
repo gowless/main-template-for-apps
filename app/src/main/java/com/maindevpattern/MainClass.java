@@ -16,44 +16,19 @@ import com.adjust.sdk.AdjustAttribution;
 import com.adjust.sdk.AdjustConfig;
 import com.adjust.sdk.LogLevel;
 import com.adjust.sdk.OnAttributionChangedListener;
-import com.maindevpattern.models.get.Data;
-import com.maindevpattern.models.get.Liste;
-import com.maindevpattern.network.Initializator;
-import com.maindevpattern.network.Interface;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainClass extends Application {
 
-    public static ArrayList<String> values;
-    public static ArrayList<String> labels;
-
-
-
-
-
-    //vars
+    //initializing variables
     public static String trackerToken, trackerName, network, campaign, adgroup, creative, adid;
     public static Float font;
-
-
-    //setting to get json file and parse it to models
-
 
 
     @Override
     public void onCreate() {
         super.onCreate();
-        values = new ArrayList<String>();
-        labels = new ArrayList<String>();
-     //   getJsonData();
-
         // Configure adjust SDK.
         String appToken = "75ekkl5aivleyo";
         String environment = AdjustConfig.ENVIRONMENT_SANDBOX;

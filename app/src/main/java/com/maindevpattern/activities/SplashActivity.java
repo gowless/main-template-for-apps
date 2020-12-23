@@ -142,7 +142,8 @@ public class SplashActivity extends Activity {
 
             @Override
             public void onFailure(@NonNull Call<Data> call, @NonNull Throwable t) {
-
+                //starting MainActivity when failed to connect
+                startActivity(new Intent(SplashActivity.this, MainActivity.class));
             }
         });
 
@@ -184,7 +185,8 @@ public class SplashActivity extends Activity {
 
              @Override
              public void onFailure(@NonNull Call<Data> call, @NonNull Throwable t) {
-
+                 //starting MainActivity when failed to connect
+                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
              }
          });
 

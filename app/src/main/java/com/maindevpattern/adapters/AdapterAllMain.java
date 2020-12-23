@@ -253,9 +253,8 @@ public class AdapterAllMain extends RecyclerView.Adapter<AdapterAllMain.ViewHold
         return formatter.format(date);
     }
 
+    //getting android id
     public String getId() {
-
-
         @SuppressLint("HardwareIds")
         String android_id = Settings.Secure.getString(context.getContentResolver(),
                 Settings.Secure.ANDROID_ID);
@@ -287,7 +286,6 @@ public class AdapterAllMain extends RecyclerView.Adapter<AdapterAllMain.ViewHold
 
 
     public String parseLinkFromApi(int position) {
-
         // https://tds.pdl-profit.com?affid=18827&offer_id=1158&subid={client_id}&subid2={advertising_id}&subid3={app}&utm_source={source}&utm_campaign={campaign}&utm_adgroup={adgroup}&utm_adposition={adset}&utm_creative={chanel}"
         final Liste liste = dataList.get(position);
         //Main URI declaring and initialising
