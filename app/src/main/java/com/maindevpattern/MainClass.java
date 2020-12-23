@@ -30,19 +30,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainClass extends Application {
-    public static List<Liste> listDataAll;
-    public static List<Liste> listDataBad;
-    public static List<Liste> listDataZero;
+
     public static ArrayList<String> values;
     public static ArrayList<String> labels;
 
 
 
-    //url base
-    public static final String APP_ID = "com.orkotkreditru";
-    public static Boolean isEmpty;
-    public static int numberOfTabs;
-    public static String first, second, third;
+
 
     //vars
     public static String trackerToken, trackerName, network, campaign, adgroup, creative, adid;
@@ -50,49 +44,7 @@ public class MainClass extends Application {
 
 
     //setting to get json file and parse it to models
-    public void getJsonData() {
 
-        Interface apiInterfaceCount = Initializator.getClient().create(Interface.class);
-        Call<Data> call = apiInterfaceCount.getData(APP_ID);
-        call.enqueue(new Callback<Data>() {
-            @Override
-            public void onResponse(@NonNull Call<Data> call, @NonNull Response<Data> response) {
-                assert response.body() != null;
-                listDataAll = response.body().getList();
-
-                isEmpty = response.body().getCategories().isEmpty();
-                numberOfTabs = response.body().getCategories().size();
-                listDataBad = response.body().getList();
-                listDataZero = response.body().getList();
-
-
-                switch (numberOfTabs) {
-                    case 0:
-                        break;
-                    case 1:
-                        first = response.body().getCategories().get(0).getLabel();
-                        break;
-                    case 2:
-                        first = response.body().getCategories().get(0).getLabel();
-                        second = response.body().getCategories().get(1).getLabel();
-                        break;
-                    case 3:
-                        first = response.body().getCategories().get(0).getLabel();
-                        second = response.body().getCategories().get(1).getLabel();
-                        third = response.body().getCategories().get(2).getLabel();
-                        break;
-                }
-
-
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<Data> call, @NonNull Throwable t) {
-
-            }
-        });
-
-    }
 
 
     @Override
@@ -100,7 +52,7 @@ public class MainClass extends Application {
         super.onCreate();
         values = new ArrayList<String>();
         labels = new ArrayList<String>();
-        getJsonData();
+     //   getJsonData();
 
         // Configure adjust SDK.
         String appToken = "75ekkl5aivleyo";

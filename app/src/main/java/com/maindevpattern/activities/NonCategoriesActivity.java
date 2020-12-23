@@ -74,8 +74,8 @@ public class NonCategoriesActivity extends AppCompatActivity {
         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
         if(isNetworkAvailable()){
-            NonCategoriesAllAdapter recyclerAdapterAllMain = new NonCategoriesAllAdapter(getApplicationContext(), MainClass.listDataAll);
-            recyclerAdapterAllMain.setDataList(MainClass.listDataAll);
+            NonCategoriesAllAdapter recyclerAdapterAllMain = new NonCategoriesAllAdapter(getApplicationContext(), SplashActivity.listDataAll);
+            recyclerAdapterAllMain.setDataList(SplashActivity.listDataAll);
             recyclerView.setAdapter(recyclerAdapterAllMain);
             progressBar.setIndeterminate(false);
             progressBar.setVisibility(View.GONE);

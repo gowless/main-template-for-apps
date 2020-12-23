@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.maindevpattern.MainClass;
 import com.maindevpattern.R;
+import com.maindevpattern.activities.SplashActivity;
 import com.maindevpattern.adapters.RecyclerAdapterWithBadList;
 
 
@@ -37,8 +38,8 @@ public class FragmentWithBadList extends Fragment {
 
         //enabling cache for better view experience
         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
-        RecyclerAdapterWithBadList recyclerAdapterWithBadList = new RecyclerAdapterWithBadList(getContext(), MainClass.listDataBad);
-        recyclerAdapterWithBadList.setDataList(MainClass.listDataBad);
+        RecyclerAdapterWithBadList recyclerAdapterWithBadList = new RecyclerAdapterWithBadList(getContext(), SplashActivity.listDataBad);
+        recyclerAdapterWithBadList.setDataList(SplashActivity.listDataBad);
         recyclerView.setAdapter(recyclerAdapterWithBadList);
 
         return view;

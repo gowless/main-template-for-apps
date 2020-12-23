@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.maindevpattern.MainClass;
+import com.maindevpattern.activities.SplashActivity;
 import com.maindevpattern.fragments.FragmentAllList;
 import com.maindevpattern.fragments.FragmentWithBadList;
 import com.maindevpattern.fragments.FragmentZeroList;
@@ -22,7 +23,7 @@ import com.maindevpattern.fragments.FragmentZeroList;
  */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-    private static final String[] TAB_TITLES = new String[]{MainClass.first, MainClass.second, MainClass.third};
+    private static final String[] TAB_TITLES = new String[]{SplashActivity.first, SplashActivity.second, SplashActivity.third};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -58,6 +59,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         // Show 2 total pages.
-        return MainClass.numberOfTabs;
+        return SplashActivity.numberOfTabs;
     }
 }

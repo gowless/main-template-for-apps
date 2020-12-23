@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.SparseLongArray;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -65,8 +66,8 @@ public class CloakActivity extends AppCompatActivity {
 
         recyclerView.setDrawingCacheEnabled(true);
         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
-        AdapterCloak recyclerAdapterCloakList = new AdapterCloak(getApplicationContext(), MainClass.listDataAll);
-        recyclerAdapterCloakList.setDataList(MainClass.listDataAll);
+        AdapterCloak recyclerAdapterCloakList = new AdapterCloak(getApplicationContext(), SplashActivity.listDataAll);
+        recyclerAdapterCloakList.setDataList(SplashActivity.listDataAll);
         recyclerView.setAdapter(recyclerAdapterCloakList);
         progressBar.setIndeterminate(false);
         progressBar.setVisibility(View.GONE);

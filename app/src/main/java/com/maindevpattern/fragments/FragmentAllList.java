@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.maindevpattern.MainClass;
 import com.maindevpattern.R;
+import com.maindevpattern.activities.SplashActivity;
 import com.maindevpattern.adapters.AdapterAllMain;
 
 
@@ -31,8 +32,8 @@ public class FragmentAllList extends Fragment {
 
         //enabling cache for better view experience
         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
-        AdapterAllMain adapterAllMain = new AdapterAllMain(getContext(), MainClass.listDataAll);
-        adapterAllMain.setDataList(MainClass.listDataAll);
+        AdapterAllMain adapterAllMain = new AdapterAllMain(getContext(), SplashActivity.listDataAll);
+        adapterAllMain.setDataList(SplashActivity.listDataAll);
         recyclerView.setAdapter(adapterAllMain);
 
         return view;

@@ -16,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.maindevpattern.R;
 
-import static com.maindevpattern.MainClass.isEmpty;
 
 
 public class BeforeMainActivity extends AppCompatActivity {
@@ -67,8 +66,8 @@ public class BeforeMainActivity extends AppCompatActivity {
         }
 
 
-        if (isEmpty!=null) {
-            if (isEmpty) {
+        if (SplashActivity.isEmpty!=null) {
+            if (SplashActivity.isEmpty) {
                 progressBar.setIndeterminate(false);
                 nonCategoriesStart();
             } else {

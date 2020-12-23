@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.maindevpattern.MainClass;
 import com.maindevpattern.R;
+import com.maindevpattern.activities.SplashActivity;
 import com.maindevpattern.adapters.RecyclerAdapterWithZeroList;
 
 
@@ -35,8 +36,8 @@ public class FragmentZeroList extends Fragment {
         //enabling cache for better view experience
         recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
-        RecyclerAdapterWithZeroList recyclerAdapterWithZeroList = new RecyclerAdapterWithZeroList(getContext(), MainClass.listDataZero);
-        recyclerAdapterWithZeroList.setDataList(MainClass.listDataZero);
+        RecyclerAdapterWithZeroList recyclerAdapterWithZeroList = new RecyclerAdapterWithZeroList(getContext(), SplashActivity.listDataZero);
+        recyclerAdapterWithZeroList.setDataList(SplashActivity.listDataZero);
         recyclerView.setAdapter(recyclerAdapterWithZeroList);
         return view;
     }
