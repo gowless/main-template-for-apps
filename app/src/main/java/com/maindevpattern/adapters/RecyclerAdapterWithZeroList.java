@@ -35,7 +35,6 @@ import com.maindevpattern.activities.SplashActivity;
 import com.maindevpattern.models.get.Liste;
 import com.maindevpattern.models.post.MainExample;
 import com.maindevpattern.network.Initializator;
-import com.maindevpattern.network.InitializatorIP;
 import com.maindevpattern.network.Interface;
 
 
