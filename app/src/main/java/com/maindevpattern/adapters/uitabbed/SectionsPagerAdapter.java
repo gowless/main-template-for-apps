@@ -8,10 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.maindevpattern.MainClass;
+
 import com.maindevpattern.activities.SplashActivity;
 import com.maindevpattern.fragments.FragmentAllList;
 import com.maindevpattern.fragments.FragmentWithBadList;
@@ -30,6 +29,11 @@ public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
+    }
+
+    @Override
+    public int getItemPosition(@NonNull Object object) {
+        return super.getItemPosition(object);
     }
 
     @NonNull

@@ -22,16 +22,12 @@ import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 import com.maindevpattern.R;
 import com.maindevpattern.adapters.uitabbed.SectionsPagerAdapter;
-import com.maindevpattern.models.get.Data;
-import com.maindevpattern.network.Initializator;
-import com.maindevpattern.network.Interface;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    //section pager
+    SectionsPagerAdapter sectionsPagerAdapter;
 
     public static String  net, cam, adg, cre, adid;
 
@@ -57,6 +53,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+        //init Section Pager instance
+        sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
 
         //declaring vars
         setDeclaring();
@@ -109,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
 
     //setting ViewPager
     private void setupViewPager(){
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs_layout);
@@ -127,13 +127,12 @@ public class MainActivity extends AppCompatActivity {
             connectivityManager.registerDefaultNetworkCallback(new ConnectivityManager.NetworkCallback(){
                 @Override
                 public void onAvailable(@NonNull Network network) {
-                    Toast.makeText(MainActivity.this, "Connection Available", Toast.LENGTH_LONG).show();
-
 
                 }
+
                 @Override
                 public void onLost(@NonNull Network network) {
-                    Toast.makeText(MainActivity.this, "Connection Lost", Toast.LENGTH_LONG).show();
+
                 }
             });
         }

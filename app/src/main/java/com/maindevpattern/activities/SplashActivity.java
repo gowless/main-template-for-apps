@@ -32,8 +32,10 @@ import retrofit2.Response;
 
 public class SplashActivity extends AppCompatActivity {
 
+    //attribution strings
     public static String  net, cam, adg, cre;
 
+    //fragments lists of offers
     public static List<Liste> listDataAll;
     public static List<Liste> listDataBad;
     public static List<Liste> listDataZero;
@@ -41,8 +43,11 @@ public class SplashActivity extends AppCompatActivity {
 
     //url base
     public static final String APP_ID = "com.orkotkreditru";
+    //category empty check field
     public static Boolean isEmpty;
+    //number of tabs field
     public static int numberOfTabs;
+    //names of each tab
     public static String first, second, third;
 
 
@@ -58,8 +63,10 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        //get firebase instance
         FirebaseAnalytics mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
+        //add event to firebase
         Bundle bundle = new Bundle();
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.APP_OPEN, bundle);
 
@@ -156,10 +163,6 @@ public class SplashActivity extends AppCompatActivity {
         });
 
     }
-
-
-
-
 
 
 
