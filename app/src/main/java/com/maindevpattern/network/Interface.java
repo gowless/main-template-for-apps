@@ -8,14 +8,15 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface Interface {
 
     //query for offers
-    @GET("offers")
+    @GET("v3/{id}")
     Call<Data> getData(
-            @Query("appId") String appId
+            @Path("id") String appId
     );
 
 

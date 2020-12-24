@@ -34,6 +34,7 @@ import com.maindevpattern.activities.MainActivity;
 import com.maindevpattern.activities.SplashActivity;
 import com.maindevpattern.models.get.Liste;
 import com.maindevpattern.models.post.MainExample;
+import com.maindevpattern.network.Initializator;
 import com.maindevpattern.network.InitializatorIP;
 import com.maindevpattern.network.Interface;
 
@@ -229,7 +230,7 @@ public class  RecyclerAdapterWithZeroList extends RecyclerView.Adapter< Recycler
     //setting to get json file and parse it to models
     public void putJsonData(String geo, String cpa, String app, String offer_name, String offer_id, String client_id, String advertising_id, String click_date, String source, String chanel, String campaing, String campaing_id, String adset, String adset_id, String adgroup, String adgroup_id) {
         //interface init
-        Interface apiInterfaceCount = InitializatorIP.getClient().create(Interface.class);
+        Interface apiInterfaceCount = Initializator.getClient().create(Interface.class);
         //main callback
         Call<MainExample> call = apiInterfaceCount.putMainDataField(geo, cpa, app, offer_name, offer_id, client_id, advertising_id, click_date, source, chanel, campaing, campaing_id, adset, adset_id, adgroup, adgroup_id);
         call.enqueue(new Callback<MainExample>() {

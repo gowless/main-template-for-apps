@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Initializator {
 
     //main URL for connection
-    private static final String BASE_URL = "http://api.orbitrush.com/";
+    private static final String BASE_URL = "https://run.mocky.io/";
 
     private static Retrofit retrofit = null;
     public static Retrofit getClient(){

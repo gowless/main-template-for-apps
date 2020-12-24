@@ -122,17 +122,21 @@ public class MainActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(connectivityManager.getActiveNetwork());
             if (capabilities == null){
-                Toast.makeText(MainActivity.this, "No Connection", Toast.LENGTH_LONG).show();
+
+               // Toast.makeText(MainActivity.this, "No Connection", Toast.LENGTH_LONG).show();
             }
             connectivityManager.registerDefaultNetworkCallback(new ConnectivityManager.NetworkCallback(){
                 @Override
                 public void onAvailable(@NonNull Network network) {
-
+                     /*
+                    here you can add some features when ethernet comes back
+                     */
                 }
-
                 @Override
                 public void onLost(@NonNull Network network) {
-
+                     /*
+                    here you can add some features when ethernet connection lost
+                     */
                 }
             });
         }
