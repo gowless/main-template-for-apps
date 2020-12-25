@@ -25,7 +25,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:background="@drawable/tab_color_selector"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +32,6 @@
             app:tabIndicator="@drawable/bg_tab_item"
             app:tabIndicatorColor="#ffe266"
             app:tabIndicatorHeight="45dp"
-            app:tabRippleColor="@android:color/transparent"
             app:tabSelectedTextColor="#333333"
             app:tabTextColor="#313131">
 
