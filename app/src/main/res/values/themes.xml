@@ -24,7 +24,7 @@
     <style name="ActivityCloak" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:windowAnimationStyle">@null</item>
-        <item name="android:statusBarColor" tools:targetApi="lollipop">#FAFAFA</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">#81EFC2</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="colorPrimary">#FAFAFA</item>
         <item name="colorPrimaryDark">#04A60A</item>
@@ -34,7 +34,7 @@
     <style name="AppThemeInformation" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:windowAnimationStyle">@null</item>
-        <item name="android:statusBarColor" tools:targetApi="lollipop">#FAFAFA</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">#81EFC2</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="colorPrimary">#FAFAFA</item>
         <item name="colorPrimaryDark">#04A60A</item>
@@ -45,7 +45,7 @@
 
         <!-- Customize your theme here. -->
         <item name="android:windowAnimationStyle">@null</item>
-        <item name="android:statusBarColor" tools:targetApi="lollipop">#FAFAFA</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">#81EFC2</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="colorPrimary">#FAFAFA</item>
         <item name="colorPrimaryDark">#04A60A</item>
@@ -71,7 +71,7 @@
     <style name="CloakDetails" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:windowAnimationStyle">@null</item>
-        <item name="android:statusBarColor" tools:targetApi="lollipop">#FAFAFA</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">#81EFC2</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
         <item name="colorPrimary">#FAFAFA</item>
         <item name="colorPrimaryDark">#04A60A</item>
@@ -88,4 +88,6 @@
         <item name="colorPrimaryDark">#04A60A</item>
         <item name="colorAccent">@color/ic_launcher_background</item>
     </style>
+    
+
 </resources>

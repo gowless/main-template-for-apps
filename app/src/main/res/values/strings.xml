@@ -35,4 +35,5 @@
     <string name="forth_row_first">Необхідні  документи</string>
     <string name="fifth_row_first">Форма видачі</string>
     <string name="first_row_first">Сума</string>
+    <string name="open_details">Подробнее</string>
 </resources>

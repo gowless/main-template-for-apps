@@ -50,13 +50,13 @@ public class CloakActivity extends AppCompatActivity {
         // setting adapter
         settingAdapter();
 
-        infoTabIcon.setOnClickListener(new View.OnClickListener() {
+/*        infoTabIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //starting info activity
                 startActivity(new Intent(CloakActivity.this, InfoDetailsActivity.class));
             }
-        });
+        }); */
 
 
 

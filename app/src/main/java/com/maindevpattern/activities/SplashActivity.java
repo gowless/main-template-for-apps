@@ -198,7 +198,7 @@ public class SplashActivity extends AppCompatActivity {
                          break;
                  }
                  //open cloak
-               getBeforeMain();
+               getCloak();
              }
 
              @Override

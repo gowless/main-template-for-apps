@@ -76,12 +76,12 @@ public class DetailsOfferActivity extends AppCompatActivity {
         //starting method
         parseDataToObjects();
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+/*        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(DetailsOfferActivity.this, CloakActivity.class));
             }
-        });
+        }); */
 
         textTerms.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,16 +104,16 @@ public class DetailsOfferActivity extends AppCompatActivity {
     //declaring items
     private void declareItems(){
         //initializing toolbar
-        toolbar = findViewById(R.id.toolbar2);
+        //toolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
-        Objects.requireNonNull(getSupportActionBar()).setTitle("");
+//        Objects.requireNonNull(getSupportActionBar()).setTitle("");
 
         //initializing views
         textTerms = findViewById(R.id.textTerms);
 
         scrollView = findViewById(R.id.scrollView2);
         imageView = findViewById(R.id.imageOffer);
-        textName = findViewById(R.id.textName);
+      //  textName = findViewById(R.id.textName);
         textAdress = findViewById(R.id.textAdress);
         textNumber = findViewById(R.id.textNumber);
         textMail = findViewById(R.id.textMail);
@@ -127,7 +127,7 @@ public class DetailsOfferActivity extends AppCompatActivity {
         //initializing progressBars
         progressBar = findViewById(R.id.progressBar4);
         progressBarImage = findViewById(R.id.progressbarImage);
-        progressBarName = findViewById(R.id.progressbarName);
+     //   progressBarName = findViewById(R.id.progressbarName);
     }
 
     // parse data to fields
@@ -138,9 +138,9 @@ public class DetailsOfferActivity extends AppCompatActivity {
         progressBar.setIndeterminate(false);
         progressBar.setVisibility(View.GONE);
         String URL = SplashActivity.listDataAll.get(position).getImg();
-        textName.setText(SplashActivity.listDataAll.get(position).getOfferName().toUpperCase());
-        progressBarName.setIndeterminate(false);
-        progressBarName.setVisibility(View.GONE);
+      //  textName.setText(SplashActivity.listDataAll.get(position).getOfferName().toUpperCase());
+//        progressBarName.setIndeterminate(false);
+//        progressBarName.setVisibility(View.GONE);
         textAdress.setText("• " + SplashActivity.listDataAll.get(position).getOfferName());
         textNumber.setText("• " + SplashActivity.listDataAll.get(position).getDetail().getPhone());
         textMail.setText("• " + SplashActivity.listDataAll.get(position).getDetail().getEmail());

@@ -55,11 +55,11 @@ public class AdapterCloak extends RecyclerView.Adapter<AdapterCloak.ViewHolder> 
         LayoutInflater inflater = LayoutInflater.from(context);
 
         if (MainClass.font > 1){
-                view = inflater.inflate(R.layout.fragment_beta, parent, false);
+                view = inflater.inflate(R.layout.fragment_beta_cloak, parent, false);
         } else if (MainClass.font >= 1.3){
-                view = inflater.inflate(R.layout.fragment_beta, parent, false);
+                view = inflater.inflate(R.layout.fragment_beta_cloak, parent, false);
         } else {
-                view = inflater.inflate(R.layout.fragment_beta, parent, false);
+                view = inflater.inflate(R.layout.fragment_beta_cloak, parent, false);
         }
         return new ViewHolder(view);
     }
@@ -107,14 +107,14 @@ public class AdapterCloak extends RecyclerView.Adapter<AdapterCloak.ViewHolder> 
             }
         });
 
-        holder.click_layout.setOnClickListener(new View.OnClickListener() {
+      /*  holder.click_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent myIntent = new Intent(context, DetailsOfferActivity.class);
                 myIntent.putExtra("position", position);
                 context.startActivity(myIntent);
             }
-        });
+        }); */
 
     }
 
@@ -137,8 +137,8 @@ public class AdapterCloak extends RecyclerView.Adapter<AdapterCloak.ViewHolder> 
             super(itemView);
 
             //initializing
-            progressBarGlide = itemView.findViewById(R.id.progressGlide);
-            click_layout = itemView.findViewById(R.id.click_layout);
+            progressBarGlide = itemView.findViewById(R.id.progressBarGlide);
+           // click_layout = itemView.findViewById(R.id.click_layout);
             button = itemView.findViewById(R.id.button);
             imgCompany = itemView.findViewById(R.id.imgCompany);
             firstCreditSum = itemView.findViewById(R.id.firstCreditSum);
