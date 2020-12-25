@@ -79,21 +79,21 @@ public class NonCategoriesAllAdapter extends RecyclerView.Adapter<NonCategoriesA
         LayoutInflater inflater = LayoutInflater.from(context);
         if (MainClass.font > 1 & MainClass.font <= 1.25){
             if (viewType == 1) {
-                view = inflater.inflate(R.layout.fragment_large_top, parent, false);
+                view = inflater.inflate(R.layout.fragment_beta, parent, false);
             } else {
-                view = inflater.inflate(R.layout.fragment_large, parent, false);
+                view = inflater.inflate(R.layout.fragment_beta, parent, false);
             }
         } else if (MainClass.font >= 1.3){
             if (viewType == 1) {
-                view = inflater.inflate(R.layout.fragment_exlarge_top, parent, false);
+                view = inflater.inflate(R.layout.fragment_beta, parent, false);
             } else {
-                view = inflater.inflate(R.layout.fragment_exlarge, parent, false);
+                view = inflater.inflate(R.layout.fragment_beta, parent, false);
             }
         } else {
             if (viewType == 1) {
-                view = inflater.inflate(R.layout.fragment_top, parent, false);
+                view = inflater.inflate(R.layout.fragment_beta, parent, false);
             } else {
-                view = inflater.inflate(R.layout.fragment, parent, false);
+                view = inflater.inflate(R.layout.fragment_beta, parent, false);
             }
         }
         return new ViewHolder(view);
@@ -135,60 +135,13 @@ public class NonCategoriesAllAdapter extends RecyclerView.Adapter<NonCategoriesA
                 .into(holder.imgCompany);
 
 
-        holder.click_layout.setOnClickListener(new View.OnClickListener() {
+      /*  holder.click_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 AdjustEvent adjustEvent = new AdjustEvent("8q9nkq");
                 Adjust.trackEvent(adjustEvent);
 
-                //switch case
-                switch (SplashActivity.net) {
-                    case "Facebook Installs":
-                        fbAdsGetData();  //init vars
-                        //putting data to offer_click on CRM
-                        putJsonData(
-                                "ua", liste.getCpa(), "com.orkotkreditru", liste.getOfferName(), liste.getOfferId().toString(),
-                                getId(), SplashActivity.ad_id,
-                                getCurrentTime(), SplashActivity.net, "-", campaign,
-                                campaign_id, creative, creative_id,
-                                adgroup, adgroup_id);
-                        break;
-
-                    case "Google Ads UAC":
-                        googleAdsGetData();  //init vars
-                        //putting data to offer_click on CRM
-                        putJsonData(
-                                "ua", liste.getCpa(), "com.orkotkreditru", liste.getOfferName(), liste.getOfferId().toString(),
-                                getId(), SplashActivity.ad_id,
-                                getCurrentTime(), SplashActivity.net, "-", campaign,
-                                campaign_id, "-", "-",
-                                adgroup, "-");
-                        break;
-
-                    case "Organic":
-                        //putting data to offer_click on CRM
-                        putJsonData(
-                                "ua", liste.getCpa(), "com.orkotkreditru", liste.getOfferName(), liste.getOfferId().toString(),
-                                getId(), SplashActivity.ad_id,
-                                getCurrentTime(), SplashActivity.net, "-", "-",
-                                "", "-", "-",
-                                "", "-");
-                        break;
-
-                    case "Unattributed":
-                        //putting data to offer_click on CRM
-                        putJsonData(
-                                "ua", liste.getCpa(), "com.orkotkreditru", liste.getOfferName(), liste.getOfferId().toString(),
-                                getId(), SplashActivity.ad_id,
-                                getCurrentTime(), SplashActivity.net, "-",
-                                "-",
-                                "-", "-", "-",
-                                "-", "-");
-                        break;
-
-
-                }
 
                 mFirebaseAnalytics = FirebaseAnalytics.getInstance(context);
 
@@ -201,7 +154,7 @@ public class NonCategoriesAllAdapter extends RecyclerView.Adapter<NonCategoriesA
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(parseLinkFromApi(position)));
                 v.getContext().startActivity(browserIntent);
             }
-        });
+        }); */
 
     }
 
@@ -215,7 +168,7 @@ public class NonCategoriesAllAdapter extends RecyclerView.Adapter<NonCategoriesA
 
         //declaring items
         ProgressBar progressBarGlide;
-        ConstraintLayout click_layout;
+      //  ConstraintLayout click_layout;
         TextView firstCreditSum, percentRate;
         ImageView imgCompany;
         Button button;
@@ -225,7 +178,7 @@ public class NonCategoriesAllAdapter extends RecyclerView.Adapter<NonCategoriesA
 
             //initializing
             progressBarGlide = itemView.findViewById(R.id.progressGlide);
-            click_layout = itemView.findViewById(R.id.click_layout);
+          //  click_layout = itemView.findViewById(R.id.click_layout);
             button = itemView.findViewById(R.id.button);
             imgCompany = itemView.findViewById(R.id.imgCompany);
             firstCreditSum = itemView.findViewById(R.id.firstCreditSum);
@@ -244,26 +197,7 @@ public class NonCategoriesAllAdapter extends RecyclerView.Adapter<NonCategoriesA
         }
     }
 
-    //setting to get json file and parse it to models
-    public void putJsonData(String geo, String cpa, String app, String offer_name, String offer_id, String client_id, String advertising_id, String click_date, String source, String chanel, String campaing, String campaing_id, String adset, String adset_id, String adgroup, String adgroup_id) {
-        //interface init
-        Interface apiInterfaceCount = Initializator.getClient().create(Interface.class);
-        //main callback
-        Call<MainExample> call = apiInterfaceCount.putMainDataField(geo, cpa, app, offer_name, offer_id, client_id, advertising_id, click_date, source, chanel, campaing, campaing_id, adset, adset_id, adgroup, adgroup_id);
-        call.enqueue(new Callback<MainExample>() {
-            @Override
-            public void onResponse(@NonNull Call<MainExample> call, @NonNull Response<MainExample> response) {
-                //tagged successful callback
-                Log.d("TAGS", "Successful");
-            }
 
-            @Override
-            public void onFailure(@NonNull Call<MainExample> call, @NonNull Throwable t) {
-
-            }
-        });
-
-    }
 
     //getting current time for post request
     public String getCurrentTime() {

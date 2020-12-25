@@ -77,13 +77,13 @@ public class MainActivity extends AppCompatActivity {
 
 
         //calling function of clicked tab info icon on top
-        infoTabIcon.setOnClickListener(new View.OnClickListener() {
+     /*   infoTabIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //starting info activity
                 startActivity(new Intent(MainActivity.this, InfoActivity.class));
             }
-        });
+        }); */
         progressBar.setIndeterminate(false);
         progressBar.setVisibility(View.GONE);
 

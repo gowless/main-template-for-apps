@@ -4,7 +4,7 @@
     <string name="FirstCredit">Первый кредит</string>
     <string name="first_credit">Первый кредит</string>
     <string name="more_one">Повторный кредит:</string>
-    <string name="needs_to_man">ТРЕБОВАНИЯ К ЗАЕМЩИКАМ</string>
+    <string name="needs_to_man">Умови отримання кредита</string>
     <string name="needs_to_get_loan">УСЛОВИЯ ПОЛУЧЕНИЯ ЗАЙМА</string>
     <string name="primer">"Сумма и срок займа: 12000 гривен на 149 дней
 Комиссия за пользование кредитом: 1% в день (120 гривен/день)
@@ -18,4 +18,11 @@
     <string name="example">ПРИМЕР РАССЧЕТА ЗАЙМА</string>
     <string name="age">Возраст</string>
     <string name="facebook_app_id">182352746762155</string>
+    <string name="top_bar_name">ТВОЙ КРЕДИТ ОНЛАЙН</string>
+    <string name="percent_rate">Процентная ставка</string>
+    <string name="fire_date">Строк погашения</string>
+    <string name="get_credit">ОФОРМИТЬ КРЕДИТ</string>
+    <string name="info_sum">Сума</string>
+    <string name="time_of_credit">Строк кредитування</string>
+    <string name="top_notif_text">Для гарантированного  одобрения кредита  оформляйтезаявку сразу  в нескольких компаниях</string>
 </resources>

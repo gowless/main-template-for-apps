@@ -55,11 +55,11 @@ public class AdapterCloak extends RecyclerView.Adapter<AdapterCloak.ViewHolder> 
         LayoutInflater inflater = LayoutInflater.from(context);
 
         if (MainClass.font > 1){
-                view = inflater.inflate(R.layout.fragment_large, parent, false);
+                view = inflater.inflate(R.layout.fragment_beta, parent, false);
         } else if (MainClass.font >= 1.3){
-                view = inflater.inflate(R.layout.fragment_exlarge, parent, false);
+                view = inflater.inflate(R.layout.fragment_beta, parent, false);
         } else {
-                view = inflater.inflate(R.layout.fragment, parent, false);
+                view = inflater.inflate(R.layout.fragment_beta, parent, false);
         }
         return new ViewHolder(view);
     }
