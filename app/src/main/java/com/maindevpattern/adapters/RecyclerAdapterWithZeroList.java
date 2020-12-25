@@ -105,15 +105,15 @@ public class  RecyclerAdapterWithZeroList extends RecyclerView.Adapter< Recycler
                 .listener(new RequestListener<Drawable>() {
                     @Override
                     public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-  //                      holder.progressBarGlide.setIndeterminate(false);
-   //                     holder.progressBarGlide.setVisibility(View.GONE);
+                        holder.progressBarGlide.setIndeterminate(false);
+                        holder.progressBarGlide.setVisibility(View.GONE);
                         return false;
                     }
 
                     @Override
                     public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-//                        holder.progressBarGlide.setIndeterminate(false);
-  //                      holder.progressBarGlide.setVisibility(View.GONE);
+                       holder.progressBarGlide.setIndeterminate(false);
+                       holder.progressBarGlide.setVisibility(View.GONE);
                         return false;
                     }
                 })
@@ -162,7 +162,7 @@ public class  RecyclerAdapterWithZeroList extends RecyclerView.Adapter< Recycler
             super(itemView);
 
             //initializing
-            progressBarGlide = itemView.findViewById(R.id.progressGlide);
+            progressBarGlide = itemView.findViewById(R.id.progressBarGlide);
            // click_layout = itemView.findViewById(R.id.click_layout);
             button = itemView.findViewById(R.id.button);
             imgCompany = itemView.findViewById(R.id.imgCompany);

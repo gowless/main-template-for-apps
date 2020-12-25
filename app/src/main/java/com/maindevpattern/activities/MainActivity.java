@@ -50,13 +50,16 @@ public class MainActivity extends AppCompatActivity {
     //top alert
     ConstraintLayout topAlert;
 
+    //top constraint
+    ConstraintLayout topConstraint;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
+        //top constraint init
+        topConstraint = findViewById(R.id.topConstraint);
         //init Section Pager instance
         sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
 
@@ -93,6 +96,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 topAlert.setVisibility(View.GONE);
+            }
+        });
+
+        topConstraint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, InfoActivity.class));
             }
         });
 

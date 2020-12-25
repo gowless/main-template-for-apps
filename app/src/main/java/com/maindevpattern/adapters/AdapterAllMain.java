@@ -112,8 +112,8 @@ public class AdapterAllMain extends RecyclerView.Adapter<AdapterAllMain.ViewHold
 
                     @Override
                     public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-//                        holder.progressBarGlide.setIndeterminate(false);
-//                        holder.progressBarGlide.setVisibility(View.GONE);
+                       holder.progressBarGlide.setIndeterminate(false);
+                       holder.progressBarGlide.setVisibility(View.GONE);
                         return false;
                     }
                 })
@@ -164,7 +164,7 @@ public class AdapterAllMain extends RecyclerView.Adapter<AdapterAllMain.ViewHold
             super(itemView);
 
             //initializing
-            progressBarGlide = itemView.findViewById(R.id.progressGlide);
+            progressBarGlide = itemView.findViewById(R.id.progressBarGlide);
           //  click_layout = itemView.findViewById(R.id.click_layout);
             button = itemView.findViewById(R.id.button);
             imgCompany = itemView.findViewById(R.id.imgCompany);

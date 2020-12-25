@@ -51,7 +51,7 @@ app:layout_constraintGuide_begin="39dp" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/topConstraint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#FAFAFA"

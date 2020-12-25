@@ -161,7 +161,7 @@ public class RecyclerAdapterWithBadList extends RecyclerView.Adapter<RecyclerAda
             super(itemView);
 
             //initializing
-            progressBarGlide = itemView.findViewById(R.id.progressGlide);
+            progressBarGlide = itemView.findViewById(R.id.progressBarGlide);
          //   click_layout = itemView.findViewById(R.id.click_layout);
             button = itemView.findViewById(R.id.button);
             imgCompany = itemView.findViewById(R.id.imgCompany);

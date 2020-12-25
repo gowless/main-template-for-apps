@@ -25,4 +25,14 @@
     <string name="info_sum">Сума</string>
     <string name="time_of_credit">Строк кредитування</string>
     <string name="top_notif_text">Для гарантированного  одобрения кредита  оформляйтезаявку сразу  в нескольких компаниях</string>
+    <string name="first_row_second">від 400 до 20 000 грн </string>
+    <string name="second_row_second">від 1 до 27 днів</string>
+    <string name="third_row_second">від 15 хв.</string>
+    <string name="fourth_row_second">паспорт, ІПН</string>
+    <string name="fifth_row_second">на карту</string>
+    <string name="second_row_first">Строк  кредитування</string>
+    <string name="third_row_first">Строк розгляду  заявки</string>
+    <string name="forth_row_first">Необхідні  документи</string>
+    <string name="fifth_row_first">Форма видачі</string>
+    <string name="first_row_first">Сума</string>
 </resources>
