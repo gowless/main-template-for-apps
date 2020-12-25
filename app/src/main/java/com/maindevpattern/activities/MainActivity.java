@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -46,8 +47,8 @@ public class MainActivity extends AppCompatActivity {
     //text non-ithernet
     TextView textView;
 
-    //SplashActivity object
-    SplashActivity splashActivity;
+    //top alert
+    ConstraintLayout topAlert;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +88,13 @@ public class MainActivity extends AppCompatActivity {
         progressBar.setIndeterminate(false);
         progressBar.setVisibility(View.GONE);
 
+        //setting top alert onClick
+        topAlert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                topAlert.setVisibility(View.GONE);
+            }
+        });
 
     }
 
@@ -153,6 +161,9 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         //info tab icon init
         infoTabIcon = findViewById(R.id.info_tab_icon);
+        //top alert
+        topAlert = findViewById(R.id.topAlert);
+
     }
 
     //setting image and text in non-ethernet case
