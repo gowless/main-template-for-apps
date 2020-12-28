@@ -33,6 +33,9 @@ public class CloakActivity extends AppCompatActivity {
     //info tab icon declaring
     ImageView infoTabIcon;
 
+    //top text button
+    TextView topTextCloak;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +60,14 @@ public class CloakActivity extends AppCompatActivity {
                 startActivity(new Intent(CloakActivity.this, InfoDetailsActivity.class));
             }
         }); */
+
+        //top text onClick
+        topTextCloak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CloakActivity.this, InfoDetailsActivity.class));
+            }
+        });
 
 
 
@@ -109,5 +120,7 @@ public class CloakActivity extends AppCompatActivity {
         infoTabIcon = findViewById(R.id.info_tab_icon);
 
         progressBar = findViewById(R.id.progressBar2);
+
+        topTextCloak = findViewById(R.id.textCloakTop);
     }
 }

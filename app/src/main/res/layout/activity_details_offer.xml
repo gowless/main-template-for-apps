@@ -23,9 +23,13 @@
             android:id="@+id/textTerms"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_marginBottom="7dp"
             android:clickable="true"
-            android:fontFamily="@font/circe_bold"
+            android:fontFamily="@font/display_semibold"
             android:gravity="center"
             android:text="УСЛОВИЯ СОГЛАШЕНИЯ"
             android:textSize="18sp"
@@ -58,7 +62,11 @@
             android:id="@+id/imageOffer"
             android:layout_width="0dp"
             android:layout_height="80dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +76,7 @@
             android:id="@+id/scrollView2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:visibility="invisible"
+            android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/textTerms"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +84,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
@@ -84,7 +92,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_bold"
+                    android:fontFamily="@font/display_semibold"
                     android:text="КОНТАКТЫ"
                     android:textSize="18sp" />
 
@@ -94,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_regular"
+                    android:fontFamily="@font/display_regular"
                     android:text="• 01030, м. Київ, вул. Леонтовича, 7"
                     android:textSize="16sp" />
 
@@ -104,7 +112,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_regular"
+                    android:fontFamily="@font/display_regular"
                     android:text="TextView"
                     android:textSize="16sp" />
 
@@ -114,7 +122,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_regular"
+                    android:fontFamily="@font/display_regular"
                     android:text="TextView"
                     android:textSize="16sp" />
 
@@ -124,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_regular"
+                    android:fontFamily="@font/display_regular"
                     android:text="TextView"
                     android:textSize="16sp" />
 
@@ -133,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_bold"
+                    android:fontFamily="@font/display_semibold"
                     android:text="Юридический адрес"
                     android:textSize="18sp" />
 
@@ -143,7 +151,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_regular"
+                    android:fontFamily="@font/display_regular"
                     android:text="TextView"
                     android:textSize="16sp" />
 
@@ -152,7 +160,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_bold"
+                    android:fontFamily="@font/display_semibold"
                     android:text="ЛИЦЕНЗИЯ"
                     android:textSize="18sp" />
 
@@ -162,7 +170,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_regular"
+                    android:fontFamily="@font/display_regular"
                     android:text="TextView"
                     android:textSize="16sp" />
 
@@ -171,7 +179,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_bold"
+                    android:fontFamily="@font/display_semibold"
                     android:text="СРОК"
                     android:textSize="18sp" />
 
@@ -180,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_regular"
+                    android:fontFamily="@font/display_regular"
                     android:text="• от 52 - 365 дней"
                     android:textSize="16sp" />
 
@@ -189,7 +197,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_bold"
+                    android:fontFamily="@font/display_semibold"
                     android:text="ГОДОВАЯ ПРОЦЕНТНАЯ СТАВКА"
                     android:textSize="18sp" />
 
@@ -199,7 +207,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_regular"
+                    android:fontFamily="@font/display_regular"
                     android:text="TextView"
                     android:textSize="16sp" />
 
@@ -209,7 +217,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_bold"
+                    android:fontFamily="@font/display_semibold"
                     android:gravity="center|left"
                     android:text="@string/first_credit"
                     android:textSize="18sp" />
@@ -220,7 +228,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_regular"
+                    android:fontFamily="@font/display_regular"
                     android:text="TextView" />
 
                 <TextView
@@ -228,7 +236,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_bold"
+                    android:fontFamily="@font/display_semibold"
                     android:gravity="center|left"
                     android:text="@string/more_one"
                     android:textSize="18sp" />
@@ -239,7 +247,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_regular"
+                    android:fontFamily="@font/display_regular"
                     android:text="TextView" />
 
                 <TextView
@@ -247,7 +255,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_bold"
+                    android:fontFamily="@font/display_semibold"
                     android:gravity="center|left"
                     android:text="@string/age"
                     android:textSize="18sp" />
@@ -257,7 +265,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:fontFamily="@font/circe_regular"
+                    android:fontFamily="@font/display_regular"
                     android:text="• от 20 до 65 лет" />
 
             </LinearLayout>
@@ -296,7 +304,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/textCloakTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/ermilov_bold"

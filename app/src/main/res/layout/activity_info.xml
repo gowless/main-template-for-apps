@@ -18,13 +18,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/textDetailsTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/ermilov_bold"
             android:text="@string/top_bar_name"
             android:textColor="@color/mainactivity_top_name"
-            android:textSize="25dp"
+            android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="366dp"
             android:layout_height="630dp"
-            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/display_bold"
                 android:text="@string/needs_to_man"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -273,8 +273,8 @@
                         android:id="@+id/textView21"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Тимчасово не працюючий, працюючий неофіційно, працюючий офіційно, працюючий офіційно менше 6 міс., працюючий офіційно більше 6 міс., працюючий офіційно  у фірмі через СПД, СПД, декретна відпустка, пенсіонер."
-                        android:fontFamily="@font/display_regular" />
+                        android:fontFamily="@font/display_regular"
+                        android:text="Тимчасово не працюючий, працюючий неофіційно, працюючий офіційно, працюючий офіційно менше 6 міс., працюючий офіційно більше 6 міс., працюючий офіційно  у фірмі через СПД, СПД, декретна відпустка, пенсіонер." />
 
                     <TextView
                         android:id="@+id/textView22"
@@ -289,6 +289,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/display_regular"
                         android:text="від 18 до 60 років" />
+
                 </LinearLayout>
             </ScrollView>
 

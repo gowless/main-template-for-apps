@@ -138,9 +138,13 @@ public class DetailsOfferActivity extends AppCompatActivity {
         progressBar.setIndeterminate(false);
         progressBar.setVisibility(View.GONE);
         String URL = SplashActivity.listDataAll.get(position).getImg();
-      //  textName.setText(SplashActivity.listDataAll.get(position).getOfferName().toUpperCase());
-//        progressBarName.setIndeterminate(false);
-//        progressBarName.setVisibility(View.GONE);
+
+        /*
+       textName.setText(SplashActivity.listDataAll.get(position).getOfferName().toUpperCase());
+       progressBarName.setIndeterminate(false);
+       progressBarName.setVisibility(View.GONE);
+         */
+
         textAdress.setText("• " + SplashActivity.listDataAll.get(position).getOfferName());
         textNumber.setText("• " + SplashActivity.listDataAll.get(position).getDetail().getPhone());
         textMail.setText("• " + SplashActivity.listDataAll.get(position).getDetail().getEmail());
