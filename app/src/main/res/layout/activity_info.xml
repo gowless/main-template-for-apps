@@ -8,8 +8,8 @@
     tools:context=".activities.InfoActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="415dp"
-        android:layout_height="49dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/bg_mainactivity_top_name"
         android:elevation="5dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline34"
@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/ermilov_bold"
             android:text="@string/top_bar_name"
+            android:textColor="@color/mainactivity_top_name"
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

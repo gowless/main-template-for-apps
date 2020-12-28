@@ -32,6 +32,7 @@
             app:tabIndicator="@drawable/bg_tab_item"
             app:tabIndicatorColor="#ffe266"
             app:tabIndicatorHeight="45dp"
+            app:tabRippleColor="@android:color/transparent"
             app:tabSelectedTextColor="#333333"
             app:tabTextColor="#313131">
 
@@ -96,11 +97,11 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:elevation="5dp"
         android:id="@+id/topConstraint"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/bg_mainactivity_top_name"
+        android:elevation="5dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -111,6 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/ermilov_bold"
+            android:maxLines="1"
             android:text="@string/top_bar_name"
             android:textColor="@color/mainactivity_top_name"
             android:textSize="25sp"
@@ -142,16 +144,16 @@
         app:layout_constraintTop_toBottomOf="@+id/topAlert" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:elevation="5dp"
         android:id="@+id/topAlert"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="35dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
         android:background="@drawable/bg_top_notification"
+        android:elevation="5dp"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
@@ -163,7 +165,7 @@
         <TextView
             android:id="@+id/textView13"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/display_bold"
             android:gravity="left|center_vertical"
             android:text="@string/top_notif_text"

@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/ermilov_bold"
             android:text="@string/top_bar_name"
+            android:textColor="@color/mainactivity_top_name"
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
