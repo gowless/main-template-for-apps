@@ -21,6 +21,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline11">
 
         <com.google.android.material.tabs.TabLayout
+
             android:id="@+id/tabs_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,12 +30,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:tabBackground="@drawable/tab_background_unselected"
+            app:tabGravity="fill"
             app:tabIndicator="@drawable/bg_tab_item"
             app:tabIndicatorColor="#ffe266"
-            app:tabIndicatorHeight="45dp"
+            app:tabIndicatorHeight="48dp"
+            app:tabPaddingEnd="10dp"
+            app:tabPaddingStart="10dp"
             app:tabRippleColor="@android:color/transparent"
             app:tabSelectedTextColor="#333333"
-            app:tabTextColor="#313131">
+            app:tabTextColor="#313131"
+            app:tabUnboundedRipple="false">
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
@@ -149,7 +155,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
         android:background="@drawable/bg_top_notification"

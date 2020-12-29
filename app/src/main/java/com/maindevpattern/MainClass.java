@@ -16,7 +16,7 @@ import com.adjust.sdk.AdjustAttribution;
 import com.adjust.sdk.AdjustConfig;
 import com.adjust.sdk.LogLevel;
 import com.adjust.sdk.OnAttributionChangedListener;
-
+import com.onesignal.OneSignal;
 
 
 public class MainClass extends Application {
@@ -25,6 +25,8 @@ public class MainClass extends Application {
     public static String trackerToken, trackerName, network, campaign, adgroup, creative, adid;
     public static Float font;
 
+
+    private static final String ONESIGNAL_APP_ID = "3d5db181-4657-4985-a2c1-178163c4db99";
 
     @Override
     public void onCreate() {
@@ -62,6 +64,15 @@ public class MainClass extends Application {
             }
         });
         Adjust.onCreate(config);
+
+        // Enable verbose OneSignal logging to debug issues if needed.
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId(ONESIGNAL_APP_ID);
+
+
 
         registerActivityLifecycleCallbacks(new AdjustLifecycleCallbacks());
     }
